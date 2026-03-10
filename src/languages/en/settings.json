@@ -3,6 +3,15 @@
     "KEYBINDINGS": {
       "SHOWTOKENDRAGRULER": "Show Token Drag Ruler"
     },
+    "SCENE": {
+      "RULERSTATE": {
+        "LABEL": "Token Drag Ruler",
+        "HINT": "Set to 'Default' to use global defaults for grid type, otherwise set to 'Enabled' or 'Disabled' to override.",
+        "ENABLED": "Enabled",
+        "DISABLED": "Disabled",
+        "DEFAULT": "Default"
+      }
+    },
     "SETTINGS": {
       "ENABLEGRIDLESS": {
         "LABEL": "Enable for Gridless Scenes",

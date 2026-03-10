@@ -10,17 +10,23 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
    * Returns whether or not the drag ruler should be displayed
    */
   static get shouldDraw() {
-    const globalSetting = canvas?.scene?.grid.type === 0 ? (game.settings?.get(__MODULE_ID__, SETTINGS.enableDragRulerGridless) ?? false) : (game.settings?.get(__MODULE_ID__, SETTINGS.enableDragRulerGridded) ?? true)
+    if (!canvas?.scene) return false;
 
     const binding = game.keybindings?.get(__MODULE_ID__, KEYBINDINGS.showTokenDragRuler);
     const keyHeld = binding?.some(({ key }) => game.keyboard?.downKeys.has(key));
+    if (keyHeld) return true;
 
-    // TODO: Scene override
-    return globalSetting || keyHeld;
+    const sceneSetting = canvas.scene.getFlag(__MODULE_ID__, "dragRulerState");
+    if (sceneSetting === "enabled") return true;
+    else if (sceneSetting === "disabled") return false;
+
+    const globalSetting = canvas?.scene?.grid.type === 0 ? (game.settings?.get(__MODULE_ID__, SETTINGS.enableDragRulerGridless) ?? false) : (game.settings?.get(__MODULE_ID__, SETTINGS.enableDragRulerGridded) ?? true)
+    return globalSetting;
   }
 
   refresh(data: foundry.canvas.placeables.tokens.TokenRuler.Data) {
     this.previousRefreshData = foundry.utils.deepClone(data);
+
     super.refresh(data);
   }
 
@@ -39,19 +45,23 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
   }
 
   _getWaypointLabelContext(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint, state: foundry.canvas.placeables.tokens.TokenRuler.State) {
+    console.log("Waypoint label context:", super._getWaypointLabelContext(waypoint, state));
     if (!FabulousTokenDragRuler.shouldDraw) return undefined;
     super._getWaypointLabelContext(waypoint, state)
   }
 
   _getWaypointStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
+    console.log("Waypoint style:", super._getWaypointStyle(waypoint));
     return this.setStyleAlpha(super._getWaypointStyle(waypoint));
   }
 
   _getGridHighlightStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint, offset: foundry.grid.BaseGrid.Offset3D) {
+    console.log("Grid highlight style:", super._getGridHighlightStyle(waypoint, offset));
     return this.setStyleAlpha(super._getGridHighlightStyle(waypoint, offset));
   }
 
   _getSegmentStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
+    console.log("Segment style:", super._getSegmentStyle(waypoint))
     return this.setStyleAlpha(super._getSegmentStyle(waypoint));
   }
 
