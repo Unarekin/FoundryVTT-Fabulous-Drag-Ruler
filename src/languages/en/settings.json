@@ -1,0 +1,14 @@
+{
+  "FABDRAGRULER": {
+    "SETTINGS": {
+      "ENABLEGRIDLESS": {
+        "LABEL": "Enable for Gridless Scenes",
+        "HINT": "Toggle on to enable the drag ruler by default for gridless scenes"
+      },
+      "ENABLEGRIDDED": {
+        "LABEL": "Enable for Gridded Scenes",
+        "HINT": "Toggle on to enable the drag ruler by default for scenes with a grid"
+      }
+    }
+  }
+}
