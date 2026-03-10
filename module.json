@@ -1,13 +1,13 @@
 {
-  "id": "module-template",
-  "title": "Module Template",
-  "description": "A module template, this should have been changed",
+  "id": "fabulous-drag-ruler",
+  "title": "Fabulous Drag Ruler",
+  "description": "A module to provide some quality of life changes to the token drag ruler introduced in Foundry v13, originally developed for the Project FU system.",
   "version": "#{VERSION}#",
   "library": "false",
   "compatibility": {
     "minimum": 13,
     "verified": 13,
-    "maximum": 13
+    "maximum": 14
   },
   "authors": [
     {
