@@ -5,28 +5,54 @@ export const SETTINGS = {
   enableDragRulerGridded: "enableDragRulerGridded"
 } as const
 
+export const KEYBINDINGS = {
+  showTokenDragRuler: "showTokenDragRuler"
+} as const
+
 Hooks.once("init", () => {
-  if (!game.settings) return;
+  if (game.settings) {
 
-  game.settings.register(__MODULE_ID__, SETTINGS.enableDragRulerGridded, {
-    name: "FABDRAGRULER.SETTINGS.ENABLEGRIDDED.LABEL",
-    hint: "FABDRAGRULER.SETTINGS.ENABLEGRIDDED.HINT",
-    scope: "world",
-    config: true,
-    type: Boolean,
-    default: true,
-    requiresReload: false
-  });
+    game.settings.register(__MODULE_ID__, SETTINGS.enableDragRulerGridded, {
+      name: "FABDRAGRULER.SETTINGS.ENABLEGRIDDED.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.ENABLEGRIDDED.HINT",
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true,
+      requiresReload: false
+    });
 
-  game.settings.register(__MODULE_ID__, SETTINGS.enableDragRulerGridless, {
-    name: "FABDRAGRULER.SETTINGS.ENABLEGRIDLESS.LABEL",
-    hint: "FABDRAGRULER.SETTINGS.ENABLEGRIDLESS.HINT",
-    scope: "world",
-    config: true,
-    type: Boolean,
-    default: false,
-    requiresReload: false
-  });
+    game.settings.register(__MODULE_ID__, SETTINGS.enableDragRulerGridless, {
+      name: "FABDRAGRULER.SETTINGS.ENABLEGRIDLESS.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.ENABLEGRIDLESS.HINT",
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false,
+      requiresReload: false
+    });
+  }
 
+  if (game.keybindings) {
+    game.keybindings.register(__MODULE_ID__, KEYBINDINGS.showTokenDragRuler, {
+      name: game.i18n?.localize("FABDRAGRULER.KEYBINDINGS.SHOWTOKENDRAGRULER"),
+      editable: [
+        {
+          key: "ShiftLeft"
+        },
+        {
+          key: "ShiftRight"
+        }
+      ],
+      restricted: false,
+      precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
+      onDown: () => {
+        // TODO
+      },
+      onUp: () => {
+        // TODO
+      }
+    })
+  }
+});
 
-})

@@ -1,5 +1,8 @@
 {
   "FABDRAGRULER": {
+    "KEYBINDINGS": {
+      "SHOWTOKENDRAGRULER": "Show Token Drag Ruler"
+    },
     "SETTINGS": {
       "ENABLEGRIDLESS": {
         "LABEL": "Enable for Gridless Scenes",
