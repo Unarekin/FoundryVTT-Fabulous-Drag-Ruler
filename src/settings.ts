@@ -1,3 +1,4 @@
+import { FabulousTokenDragRuler } from "TokenDragRuler";
 import "./config";
 
 export const SETTINGS = {
@@ -47,10 +48,14 @@ Hooks.once("init", () => {
       restricted: false,
       precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
       onDown: () => {
-        // TODO
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        if (CONFIG.Token.rulerClass instanceof FabulousTokenDragRuler || (CONFIG.Token.rulerClass as any).prototype === FabulousTokenDragRuler.prototype)
+          FabulousTokenDragRuler.toggleVisibility();
       },
       onUp: () => {
-        // TODO
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        if (CONFIG.Token.rulerClass instanceof FabulousTokenDragRuler || (CONFIG.Token.rulerClass as any).prototype === FabulousTokenDragRuler.prototype)
+          FabulousTokenDragRuler.toggleVisibility();
       }
     })
   }
