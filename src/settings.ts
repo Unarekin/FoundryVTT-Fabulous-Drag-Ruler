@@ -1,11 +1,12 @@
 import { FabulousTokenDragRuler } from "TokenDragRuler";
 import "./config";
-import { SegmentStyleOverrideApplication } from "./applications"
+import { SegmentStyleOverrideApplication, WaypointStyleOverrideApplication } from "./applications"
 
 export const SETTINGS = {
   enableDragRulerGridless: "enableDragRulerGridless",
   enableDragRulerGridded: "enableDragRulerGridded",
-  userSegmentStyle: "userSegmentStyle"
+  userSegmentStyle: "userSegmentStyle",
+  userWaypointStyle: "userWaypointStyle"
 } as const
 
 export const KEYBINDINGS = {
@@ -55,6 +56,26 @@ Hooks.once("init", () => {
         enabled: false
       }
     });
+
+    game.settings.registerMenu(__MODULE_ID__, "userWaypointStyleMenu", {
+      name: "FABDRAGRULER.SETTINGS.WAYPOINTSTYLEOVERRIDE.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.WAYPOINTSTYLEOVERRIDE.HINT",
+      label: "FABDRAGRULER.SETTINGS.WAYPOINTSTYLEOVERRIDE.LABEL",
+      icon: "fa-solid fa-circle",
+      restricted: false,
+      type: WaypointStyleOverrideApplication
+    });
+
+    game.settings.register(__MODULE_ID__, SETTINGS.userWaypointStyle, {
+      name: "FABDRAGRULER.SETTINGS.USERWAYPOINTSTYLE",
+      config: false,
+      type: Object,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      scope: "user" as any,
+      default: {
+        enabled: false
+      }
+    })
   }
 
 

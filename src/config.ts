@@ -5,6 +5,8 @@ declare module "fvtt-types/configuration" {
     "fabulous-drag-ruler.enableDragRulerGridless": boolean;
     "fabulous-drag-ruler.enableDragRulerGridded": boolean;
     "fabulous-drag-ruler.userSegmentStyle": OverrideConfig<foundry.canvas.placeables.tokens.TokenRuler.SegmentStyle>;
+    "fabulous-drag-ruler.userWaypointStyle": OverrideConfig<foundry.canvas.placeables.tokens.TokenRuler.WaypointStyle>;
+
   }
 
   interface FlagConfig {

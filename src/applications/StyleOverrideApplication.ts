@@ -1,6 +1,5 @@
 import { DeepPartial, OverrideConfig, StyleOverrideKey } from "types"
 import { StyleOverrideConfiguration, StyleOverrideContext, StyleOverrideOptions } from "./types"
-import { SETTINGS } from "settings";
 
 export abstract class StyleOverrideApplication extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.api.ApplicationV2<StyleOverrideContext, StyleOverrideConfiguration, StyleOverrideOptions>) {
 
@@ -49,7 +48,8 @@ export abstract class StyleOverrideApplication extends foundry.applications.api.
   static async onSubmit(this: StyleOverrideApplication, event: Event, form: HTMLFormElement, formData: foundry.applications.ux.FormDataExtended) {
     if (!game.settings) return;
     const data = ((foundry.utils.expandObject(formData.object) as Record<string, unknown>).config) as OverrideConfig<foundry.canvas.placeables.tokens.TokenRuler.SegmentStyle>;
-    await game.settings.set(__MODULE_ID__, SETTINGS.userSegmentStyle, data)
+    console.log("Setting style:", data);
+    await game.settings.set(__MODULE_ID__, this.settingKey, data)
   }
 
   async _prepareContext(options: StyleOverrideOptions) {

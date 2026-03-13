@@ -22,10 +22,10 @@ export type AnyFunction = (arg0: never, ...args: never[]) => unknown;
 export const DragRulerStates = ["default", "enabled", "disabled"] as const;
 export type DragRulerState = typeof DragRulerStates[number];
 
-export const StyleOverrideKeys = ["userSegmentStyle"] as const;
+export const StyleOverrideKeys = ["userSegmentStyle", "userWaypointStyle"] as const;
 export type StyleOverrideKey = typeof StyleOverrideKeys[number];
 
 export interface OverrideConfig<style> {
   enabled: boolean;
-  style: style;
+  style?: style;
 }

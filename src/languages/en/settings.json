@@ -24,6 +24,10 @@
       "SEGMENTSTYLEOVERRIDE": {
         "LABEL": "Segment Style Overrides",
         "HINT": "Options to customize the look of line segments when dragging tokens."
+      },
+      "WAYPOINTSTYLEOVERRIDE": {
+        "LABEL": "Waypoint Style Overrides",
+        "HINT": "Options to customize the look of waypointsa long the drag ruler."
       }
     }
   }

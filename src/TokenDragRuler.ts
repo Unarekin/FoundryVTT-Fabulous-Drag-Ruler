@@ -51,8 +51,12 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
   }
 
   _getWaypointStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
-    console.log("Waypoint style:", super._getWaypointStyle(waypoint));
-    return this.setStyleAlpha(super._getWaypointStyle(waypoint));
+    const style = super._getWaypointStyle(waypoint);
+    const override = game.settings?.get(__MODULE_ID__, SETTINGS.userWaypointStyle);
+    if (override?.enabled)
+      foundry.utils.mergeObject(style, override.style);
+
+    return this.setStyleAlpha(style);
   }
 
   _getGridHighlightStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint, offset: foundry.grid.BaseGrid.Offset3D) {
@@ -66,10 +70,7 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
     if (override?.enabled)
       foundry.utils.mergeObject(style, override.style);
 
-    console.log("Segment style:", style)
     return this.setStyleAlpha(style);
-
-    // return this.setStyleAlpha(super._getSegmentStyle(waypoint));
   }
 
   destroy() {
