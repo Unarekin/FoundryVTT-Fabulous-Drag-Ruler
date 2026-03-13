@@ -27,7 +27,11 @@
       },
       "WAYPOINTSTYLEOVERRIDE": {
         "LABEL": "Waypoint Style Overrides",
-        "HINT": "Options to customize the look of waypointsa long the drag ruler."
+        "HINT": "Options to customize the look of waypoints along the drag ruler."
+      },
+      "GRIDHIGHLIGHTSTYLEOVERRIDE": {
+        "LABEL": "Grid Highlight Style Overrides",
+        "HINT": "Options to customize the look of the drag ruler's grid highlight"
       }
     }
   }

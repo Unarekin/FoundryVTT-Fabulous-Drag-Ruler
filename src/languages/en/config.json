@@ -23,6 +23,21 @@
           "HINT": "Color of the waypoint"
         }
       },
+      "GRIDHIGHLIGHT": {
+        "TITLE": "Grid Highlight Style Overrides",
+        "ENABLED": {
+          "LABEL": "Enable",
+          "HINT": "Toggle on to enable drag segment overrides"
+        },
+        "COLOR": {
+          "LABEL": "Color",
+          "HINT": "Color of the grid highlight section"
+        },
+        "ALPHA": {
+          "LABEL": "Alpha",
+          "HINT": "The alpha value of the grid highlight"
+        }
+      },
       "SEGMENT": {
         "TITLE": "Segment Style Overrides",
         "ENABLED": {

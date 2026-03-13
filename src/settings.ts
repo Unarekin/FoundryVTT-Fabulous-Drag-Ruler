@@ -1,12 +1,13 @@
 import { FabulousTokenDragRuler } from "TokenDragRuler";
 import "./config";
-import { SegmentStyleOverrideApplication, WaypointStyleOverrideApplication } from "./applications"
+import { GridHighlightStyleOverrideApplication, SegmentStyleOverrideApplication, WaypointStyleOverrideApplication } from "./applications"
 
 export const SETTINGS = {
   enableDragRulerGridless: "enableDragRulerGridless",
   enableDragRulerGridded: "enableDragRulerGridded",
   userSegmentStyle: "userSegmentStyle",
-  userWaypointStyle: "userWaypointStyle"
+  userWaypointStyle: "userWaypointStyle",
+  userGridHighlightStyle: "userGridHighlightStyle"
 } as const
 
 export const KEYBINDINGS = {
@@ -75,7 +76,27 @@ Hooks.once("init", () => {
       default: {
         enabled: false
       }
-    })
+    });
+
+    game.settings.registerMenu(__MODULE_ID__, "userGridHighlightStyleMenu", {
+      name: "FABDRAGRULER.SETTINGS.GRIDHIGHLIGHTSTYLEOVERRIDE.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.GRIDHIGHLIGHTSTYLEOVERRIDE.HINT",
+      label: "FABDRAGRULER.SETTINGS.GRIDHIGHLIGHTSTYLEOVERRIDE.LABEL",
+      icon: "fa-solid fa-table-cells-large",
+      restricted: false,
+      type: GridHighlightStyleOverrideApplication
+    });
+
+    game.settings.register(__MODULE_ID__, SETTINGS.userGridHighlightStyle, {
+      name: "FABDRAGRULER.SETTINGS.USERGRIDHIGHLIGHTSTYLE",
+      config: false,
+      type: Object,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      scope: "user" as any,
+      default: {
+        enabled: false
+      }
+    });
   }
 
 

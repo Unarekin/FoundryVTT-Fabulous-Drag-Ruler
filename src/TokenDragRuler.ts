@@ -60,8 +60,14 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
   }
 
   _getGridHighlightStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint, offset: foundry.grid.BaseGrid.Offset3D) {
-    console.log("Grid highlight style:", super._getGridHighlightStyle(waypoint, offset));
-    return this.setStyleAlpha(super._getGridHighlightStyle(waypoint, offset));
+    const style = super._getGridHighlightStyle(waypoint, offset);
+    const override = game.settings?.get(__MODULE_ID__, SETTINGS.userGridHighlightStyle);
+    if (override?.enabled)
+      foundry.utils.mergeObject(style, override.style);
+
+    return this.setStyleAlpha(style);
+    // console.log("Grid highlight style:", super._getGridHighlightStyle(waypoint, offset));
+    // return this.setStyleAlpha(super._getGridHighlightStyle(waypoint, offset));
   }
 
   _getSegmentStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
