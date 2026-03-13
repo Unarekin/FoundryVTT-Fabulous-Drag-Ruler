@@ -20,6 +20,10 @@
       "ENABLEGRIDDED": {
         "LABEL": "Enable for Gridded Scenes",
         "HINT": "Toggle on to enable the drag ruler by default for scenes with a grid"
+      },
+      "SEGMENTSTYLEOVERRIDE": {
+        "LABEL": "Segment Style Overrides",
+        "HINT": "Options to customize the look of line segments when dragging tokens."
       }
     }
   }

@@ -1,0 +1,28 @@
+{
+  "FABDRAGRULER": {
+    "CONFIG": {
+      "COMMON": {
+        "RESETTODEFAULT": "Reset to Default"
+      },
+      "SEGMENT": {
+        "TITLE": "Segment Style Overrides",
+        "ENABLED": {
+          "LABEL": "Enable",
+          "HINT": "Toggle on to enable drag segment overrides"
+        },
+        "WIDTH": {
+          "LABEL": "Width",
+          "HINT": "The width of the drag segment.  Will be multiplied by the canvas's UI scale"
+        },
+        "COLOR": {
+          "LABEL": "Color",
+          "HINT": "Color of the drag ruler segments"
+        },
+        "ALPHA": {
+          "LABEL": "Alpha",
+          "HINT": "Alpha value of the drag ruler segments"
+        }
+      }
+    }
+  }
+}
