@@ -1,9 +1,11 @@
 import { FabulousTokenDragRuler } from "TokenDragRuler";
 import "./config";
+import { SegmentStyleOverrideApplication } from "./applications"
 
 export const SETTINGS = {
   enableDragRulerGridless: "enableDragRulerGridless",
-  enableDragRulerGridded: "enableDragRulerGridded"
+  enableDragRulerGridded: "enableDragRulerGridded",
+  userSegmentStyle: "userSegmentStyle"
 } as const
 
 export const KEYBINDINGS = {
@@ -32,7 +34,29 @@ Hooks.once("init", () => {
       default: false,
       requiresReload: false
     });
+
+
+    game.settings.registerMenu(__MODULE_ID__, "userSegmentStyleMenu", {
+      name: "FABDRAGRULER.SETTINGS.SEGMENTSTYLEOVERRIDE.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.SEGMENTSTYLEOVERRIDE.HINT",
+      label: "FABDRAGRULER.SETTINGS.SEGMENTSTYLEOVERRIDE.LABEL",
+      icon: "fa-solid fa-arrow-trend-up",
+      restricted: false,
+      type: SegmentStyleOverrideApplication
+    });
+
+    game.settings.register(__MODULE_ID__, SETTINGS.userSegmentStyle, {
+      name: "FABDRAGRULER.SETTINGS.USERSEGMENTSTYLE",
+      config: false,
+      type: Object,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      scope: "user" as any,
+      default: {
+        enabled: false
+      }
+    });
   }
+
 
   if (game.keybindings) {
     game.keybindings.register(__MODULE_ID__, KEYBINDINGS.showTokenDragRuler, {

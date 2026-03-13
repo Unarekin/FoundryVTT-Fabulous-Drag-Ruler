@@ -61,8 +61,15 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
   }
 
   _getSegmentStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
-    console.log("Segment style:", super._getSegmentStyle(waypoint))
-    return this.setStyleAlpha(super._getSegmentStyle(waypoint));
+    const style = super._getSegmentStyle(waypoint);
+    const override = game.settings?.get(__MODULE_ID__, SETTINGS.userSegmentStyle);
+    if (override?.enabled)
+      foundry.utils.mergeObject(style, override.style);
+
+    console.log("Segment style:", style)
+    return this.setStyleAlpha(style);
+
+    // return this.setStyleAlpha(super._getSegmentStyle(waypoint));
   }
 
   destroy() {
