@@ -51,7 +51,7 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
 
   _getWaypointStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
     const style = super._getWaypointStyle(waypoint);
-    const override = game.settings?.get(__MODULE_ID__, SETTINGS.userWaypointStyle);
+    const override = game.users?.get(waypoint.userId!)?.getFlag(__MODULE_ID__, "userWaypointStyle");
     if (override?.enabled)
       foundry.utils.mergeObject(style, override.style);
 
@@ -60,7 +60,7 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
 
   _getGridHighlightStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint, offset: foundry.grid.BaseGrid.Offset3D) {
     const style = super._getGridHighlightStyle(waypoint, offset);
-    const override = game.settings?.get(__MODULE_ID__, SETTINGS.userGridHighlightStyle);
+    const override = game.users?.get(waypoint.userId!)?.getFlag(__MODULE_ID__, "userGridHighlightStyle");
     if (override?.enabled)
       foundry.utils.mergeObject(style, override.style);
 
@@ -69,7 +69,7 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
 
   _getSegmentStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
     const style = super._getSegmentStyle(waypoint);
-    const override = game.settings?.get(__MODULE_ID__, SETTINGS.userSegmentStyle);
+    const override = game.users?.get(waypoint.userId!)?.getFlag(__MODULE_ID__, "userSegmentStyle");
     if (override?.enabled)
       foundry.utils.mergeObject(style, override.style);
 

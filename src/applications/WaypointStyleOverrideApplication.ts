@@ -1,7 +1,6 @@
 import { DeepPartial } from "types";
 import { StyleOverrideApplication } from "./StyleOverrideApplication";
 import { StyleOverrideConfiguration } from "./types";
-import { SETTINGS } from "settings";
 
 export class WaypointStyleOverrideApplication extends StyleOverrideApplication {
   static DEFAULT_OPTIONS = {
@@ -30,7 +29,7 @@ export class WaypointStyleOverrideApplication extends StyleOverrideApplication {
     }
   }
   constructor(options?: DeepPartial<StyleOverrideConfiguration>) {
-    super(SETTINGS.userWaypointStyle, options);
+    super("userWaypointStyle", options);
   }
 
 }

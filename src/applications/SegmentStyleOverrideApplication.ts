@@ -1,7 +1,6 @@
 import { DeepPartial } from "types";
 import { StyleOverrideApplication } from "./StyleOverrideApplication";
 import { StyleOverrideConfiguration } from "./types";
-import { SETTINGS } from "settings";
 
 export class SegmentStyleOverrideApplication extends StyleOverrideApplication {
   static DEFAULT_OPTIONS = {
@@ -31,6 +30,6 @@ export class SegmentStyleOverrideApplication extends StyleOverrideApplication {
     }
   }
   constructor(options?: DeepPartial<StyleOverrideConfiguration>) {
-    super(SETTINGS.userSegmentStyle, options);
+    super("userSegmentStyle", options);
   }
 }

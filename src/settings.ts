@@ -5,9 +5,6 @@ import { GridHighlightStyleOverrideApplication, SegmentStyleOverrideApplication,
 export const SETTINGS = {
   enableDragRulerGridless: "enableDragRulerGridless",
   enableDragRulerGridded: "enableDragRulerGridded",
-  userSegmentStyle: "userSegmentStyle",
-  userWaypointStyle: "userWaypointStyle",
-  userGridHighlightStyle: "userGridHighlightStyle"
 } as const
 
 export const KEYBINDINGS = {
@@ -47,16 +44,16 @@ Hooks.once("init", () => {
       type: SegmentStyleOverrideApplication
     });
 
-    game.settings.register(__MODULE_ID__, SETTINGS.userSegmentStyle, {
-      name: "FABDRAGRULER.SETTINGS.USERSEGMENTSTYLE",
-      config: false,
-      type: Object,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      scope: "user" as any,
-      default: {
-        enabled: false
-      }
-    });
+    // game.settings.register(__MODULE_ID__, SETTINGS.userSegmentStyle, {
+    //   name: "FABDRAGRULER.SETTINGS.USERSEGMENTSTYLE",
+    //   config: false,
+    //   type: Object,
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    //   scope: "user" as any,
+    //   default: {
+    //     enabled: false
+    //   }
+    // });
 
     game.settings.registerMenu(__MODULE_ID__, "userWaypointStyleMenu", {
       name: "FABDRAGRULER.SETTINGS.WAYPOINTSTYLEOVERRIDE.LABEL",
@@ -67,16 +64,16 @@ Hooks.once("init", () => {
       type: WaypointStyleOverrideApplication
     });
 
-    game.settings.register(__MODULE_ID__, SETTINGS.userWaypointStyle, {
-      name: "FABDRAGRULER.SETTINGS.USERWAYPOINTSTYLE",
-      config: false,
-      type: Object,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      scope: "user" as any,
-      default: {
-        enabled: false
-      }
-    });
+    // game.settings.register(__MODULE_ID__, SETTINGS.userWaypointStyle, {
+    //   name: "FABDRAGRULER.SETTINGS.USERWAYPOINTSTYLE",
+    //   config: false,
+    //   type: Object,
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    //   scope: "user" as any,
+    //   default: {
+    //     enabled: false
+    //   }
+    // });
 
     game.settings.registerMenu(__MODULE_ID__, "userGridHighlightStyleMenu", {
       name: "FABDRAGRULER.SETTINGS.GRIDHIGHLIGHTSTYLEOVERRIDE.LABEL",
@@ -87,16 +84,16 @@ Hooks.once("init", () => {
       type: GridHighlightStyleOverrideApplication
     });
 
-    game.settings.register(__MODULE_ID__, SETTINGS.userGridHighlightStyle, {
-      name: "FABDRAGRULER.SETTINGS.USERGRIDHIGHLIGHTSTYLE",
-      config: false,
-      type: Object,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      scope: "user" as any,
-      default: {
-        enabled: false
-      }
-    });
+    // game.settings.register(__MODULE_ID__, SETTINGS.userGridHighlightStyle, {
+    //   name: "FABDRAGRULER.SETTINGS.USERGRIDHIGHLIGHTSTYLE",
+    //   config: false,
+    //   type: Object,
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    //   scope: "user" as any,
+    //   default: {
+    //     enabled: false
+    //   }
+    // });
   }
 
 

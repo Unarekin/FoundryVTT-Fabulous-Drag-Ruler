@@ -48,8 +48,8 @@ export abstract class StyleOverrideApplication extends foundry.applications.api.
   static async onSubmit(this: StyleOverrideApplication, event: Event, form: HTMLFormElement, formData: foundry.applications.ux.FormDataExtended) {
     if (!game.settings) return;
     const data = ((foundry.utils.expandObject(formData.object) as Record<string, unknown>).config) as OverrideConfig<foundry.canvas.placeables.tokens.TokenRuler.SegmentStyle>;
-    console.log("Setting style:", data);
-    await game.settings.set(__MODULE_ID__, this.settingKey, data)
+    if (game.user)
+      await game.user.setFlag(__MODULE_ID__, this.settingKey, data);
   }
 
   async _prepareContext(options: StyleOverrideOptions) {
@@ -61,7 +61,8 @@ export abstract class StyleOverrideApplication extends foundry.applications.api.
       {
         style: foundry.utils.deepClone(this.getDefaultStyle()),
       },
-      game.settings?.get(__MODULE_ID__, this.settingKey) ?? {}
+      game.user?.getFlag(__MODULE_ID__, this.settingKey) ?? {}
+      // game.settings?.get(__MODULE_ID__, this.settingKey) ?? {}
     );
 
     context.buttons = [

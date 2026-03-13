@@ -1,7 +1,6 @@
 import { DeepPartial } from "types";
 import { StyleOverrideApplication } from "./StyleOverrideApplication";
 import { StyleOverrideConfiguration } from "./types";
-import { SETTINGS } from "settings";
 
 export class GridHighlightStyleOverrideApplication extends StyleOverrideApplication {
   static DEFAULT_OPTIONS = {
@@ -28,6 +27,6 @@ export class GridHighlightStyleOverrideApplication extends StyleOverrideApplicat
   }
 
   constructor(options?: DeepPartial<StyleOverrideConfiguration>) {
-    super(SETTINGS.userGridHighlightStyle, options);
+    super("userGridHighlightStyle", options);
   }
 }
