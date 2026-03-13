@@ -33,7 +33,9 @@ In the Game Settings window, the drag ruler can be enabled or disabled by defaul
 
 <img  alt="image" src="https://github.com/user-attachments/assets/9ff090c6-48ca-498f-ab50-0a6e54cb0628" />
 
-The style override options are rather straightforward.  Color is the color of the element, alpha is how transparent it is.
+The style override options are rather straightforward.  Color is the color of the element, alpha is how transparent it is.  Enable or disable to ... enable or disable the overrides.
+
+The default colors for each of these elements is based on the user's player color, configured in their own settings.
 
 <table>
   <tr>
