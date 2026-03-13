@@ -1,0 +1,62 @@
+{
+  "FABDRAGRULER": {
+    "CONFIG": {
+      "COMMON": {
+        "RESETTODEFAULT": "Reset to Default"
+      },
+      "WAYPOINT": {
+        "TITLE": "Waypoint Style Overrides",
+        "ENABLED": {
+          "LABEL": "Enable",
+          "HINT": "Toggle on to enable waypoint overrides"
+        },
+        "RADIUS": {
+          "LABEL": "Radius",
+          "HINT": "Radius of the waypoint"
+        },
+        "ALPHA": {
+          "LABEL": "Alpha",
+          "HINT": "Alpha value of the waypoint"
+        },
+        "COLOR": {
+          "LABEL": "Color",
+          "HINT": "Color of the waypoint"
+        }
+      },
+      "GRIDHIGHLIGHT": {
+        "TITLE": "Grid Highlight Style Overrides",
+        "ENABLED": {
+          "LABEL": "Enable",
+          "HINT": "Toggle on to enable drag segment overrides"
+        },
+        "COLOR": {
+          "LABEL": "Color",
+          "HINT": "Color of the grid highlight section"
+        },
+        "ALPHA": {
+          "LABEL": "Alpha",
+          "HINT": "The alpha value of the grid highlight"
+        }
+      },
+      "SEGMENT": {
+        "TITLE": "Segment Style Overrides",
+        "ENABLED": {
+          "LABEL": "Enable",
+          "HINT": "Toggle on to enable drag segment overrides"
+        },
+        "WIDTH": {
+          "LABEL": "Width",
+          "HINT": "The width of the drag segment.  Will be multiplied by the canvas's UI scale"
+        },
+        "COLOR": {
+          "LABEL": "Color",
+          "HINT": "Color of the drag ruler segments"
+        },
+        "ALPHA": {
+          "LABEL": "Alpha",
+          "HINT": "Alpha value of the drag ruler segments"
+        }
+      }
+    }
+  }
+}

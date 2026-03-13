@@ -1,0 +1,52 @@
+<section>
+  <div class="form-group">
+    <label for="{{idPrefix}}-enabled">{{localize
+        "FABDRAGRULER.CONFIG.GRIDHIGHLIGHT.ENABLED.LABEL"
+      }}</label>
+    <input
+      type="checkbox"
+      name="config.enabled"
+      id="{{idPrefix}}-enabled"
+      {{checked config.enabled}}
+    />
+    <p class="hint">{{localize
+        "FABDRAGRULER.CONFIG.GRIDHIGHLIGHT.ENABLED.HINT"
+      }}</p>
+  </div>
+
+  <div class="form-group">
+    <label for="{{idPrefix}}-color">{{localize
+        "FABDRAGRULER.CONFIG.GRIDHIGHLIGHT.COLOR.LABEL"
+      }}</label>
+    <color-picker
+      id="{{idPrefix}}-color"
+      name="config.style.color"
+      value="{{config.style.color}}"
+    ></color-picker>
+    <p class="hint">{{localize
+        "FABDRAGRULER.CONFIG.GRIDHIGHLIGHT.COLOR.HINT"
+      }}</p>
+  </div>
+
+  <div class="form-group">
+    <label for="{{idPrefix}}-alpha">{{localize
+        "FABDRAGRULER.CONFIG.GRIDHIGHLIGHT.ALPHA.LABEL"
+      }}</label>
+    <range-picker
+      id="{{idPrefix}}-alpha"
+      name="config.style.alpha"
+      min="0"
+      max="1"
+      value="{{config.style.alpha}}"
+    ></range-picker>"
+    <p class="hint">{{localize
+        "FABDRAGRULER.CONFIG.GRIDHIGHLIGHT.ALPHA.HINT"
+      }}</p>
+  </div>
+
+  <button
+    type="button"
+    data-action="resetToDefault"
+    style="width:100%"
+  >{{localize "FABDRAGRULER.CONFIG.COMMON.RESETTODEFAULT"}}</button>
+</section>

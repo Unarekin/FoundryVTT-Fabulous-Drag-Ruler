@@ -1,7 +1,7 @@
 {
-  "name": "foundryvtt-module-template",
+  "name": "foundryvtt-fabulous-drag-ruler",
   "version": "1.0.0",
-  "description": "",
+  "description": "A module to provide some quality of life changes to the token drag ruler introduced in Foundry v13, originally developed for the Project FU system.",
   "main": "dist/module.js",
   "scripts": {
     "build": "node build.mjs",
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Unarekin/FoundryVTT-Module-Template.git"
+    "url": "git+https://github.com/Unarekin/FoundryVTT-Fabulous-Drag-Ruler.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "types": "./types/module.d.ts",
   "bugs": {
-    "url": "https://github.com/Unarekin/FoundryVTT-Module-Template/issues"
+    "url": "https://github.com/Unarekin/FoundryVTT-Fabulous-Drag-Ruler/issues"
   },
-  "homepage": "https://github.com/Unarekin/FoundryVTT-Module-Template#readme",
+  "homepage": "https://github.com/Unarekin/FoundryVTT-Fabulous-Drag-Ruler#readme",
   "devDependencies": {
     "@eslint/js": "^9.11.0",
     "@foundryvtt/foundryvtt-cli": "^1.1.0",
