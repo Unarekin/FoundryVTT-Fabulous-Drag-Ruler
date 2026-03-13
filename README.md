@@ -11,6 +11,7 @@
 # Fabulous Drag Ruler
 Fabulous Drag Ruler adds some customizability to the token drag ruler added in FoundryVTT v13.  It allows you to enable or disable the ruler by default for gridded or gridless scenes, toggle it on or off per-scene, and to customize the color and size a bit.
 
+This module uses code I originally developed for the [Project FU](https://github.com/League-of-Fabulous-Developers/FoundryVTT-Fabula-Ultima) system for playing Fabula Ultima, since it does not generally care about movement or distances.
 
 # Installation
 
