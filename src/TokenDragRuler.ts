@@ -45,9 +45,8 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
   }
 
   _getWaypointLabelContext(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint, state: foundry.canvas.placeables.tokens.TokenRuler.State) {
-    console.log("Waypoint label context:", super._getWaypointLabelContext(waypoint, state));
     if (!FabulousTokenDragRuler.shouldDraw) return undefined;
-    super._getWaypointLabelContext(waypoint, state)
+    return super._getWaypointLabelContext(waypoint, state)
   }
 
   _getWaypointStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
@@ -66,8 +65,6 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
       foundry.utils.mergeObject(style, override.style);
 
     return this.setStyleAlpha(style);
-    // console.log("Grid highlight style:", super._getGridHighlightStyle(waypoint, offset));
-    // return this.setStyleAlpha(super._getGridHighlightStyle(waypoint, offset));
   }
 
   _getSegmentStyle(waypoint: foundry.canvas.placeables.tokens.TokenRuler.Waypoint) {
