@@ -1,7 +1,7 @@
 {
   "name": "foundryvtt-fabulous-drag-ruler",
   "version": "1.0.0",
-  "description": "",
+  "description": "A module to provide some quality of life changes to the token drag ruler introduced in Foundry v13, originally developed for the Project FU system.",
   "main": "dist/module.js",
   "scripts": {
     "build": "node build.mjs",
