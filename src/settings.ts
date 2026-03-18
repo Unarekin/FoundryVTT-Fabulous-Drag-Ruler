@@ -1,4 +1,4 @@
-import { FabulousTokenDragRuler } from "TokenDragRuler";
+import { FabulousTokenDragRuler } from "./types"
 import "./config";
 import { GridHighlightStyleOverrideApplication, SegmentStyleOverrideApplication, WaypointStyleOverrideApplication } from "./applications"
 
@@ -122,14 +122,14 @@ Hooks.once("init", () => {
       restricted: false,
       precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
       onDown: () => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (CONFIG.Token.rulerClass instanceof FabulousTokenDragRuler || (CONFIG.Token.rulerClass as any).prototype === FabulousTokenDragRuler.prototype)
-          FabulousTokenDragRuler.toggleVisibility();
+        const rulerClass = CONFIG.Token.rulerClass as FabulousTokenDragRuler
+        if (rulerClass.toggleVisibility)
+          rulerClass.toggleVisibility();
       },
       onUp: () => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (CONFIG.Token.rulerClass instanceof FabulousTokenDragRuler || (CONFIG.Token.rulerClass as any).prototype === FabulousTokenDragRuler.prototype)
-          FabulousTokenDragRuler.toggleVisibility();
+        const rulerClass = CONFIG.Token.rulerClass as FabulousTokenDragRuler
+        if (rulerClass.toggleVisibility)
+          rulerClass.toggleVisibility();
       }
     })
   }
