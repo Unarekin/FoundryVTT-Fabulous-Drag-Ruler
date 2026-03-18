@@ -13,6 +13,10 @@
       }
     },
     "SETTINGS": {
+      "DISABLEOUTOFCOMBAT": {
+        "LABEL": "Disable Out of Combat",
+        "HINT": "Toggle on to disable the drag ruler by default when not in an active encounter"
+      },
       "ENABLEGRIDLESS": {
         "LABEL": "Enable for Gridless Scenes",
         "HINT": "Toggle on to enable the drag ruler by default for gridless scenes"

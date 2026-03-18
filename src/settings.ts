@@ -1,10 +1,11 @@
-import { FabulousTokenDragRuler } from "TokenDragRuler";
+import { FabulousTokenDragRuler } from "./types"
 import "./config";
 import { GridHighlightStyleOverrideApplication, SegmentStyleOverrideApplication, WaypointStyleOverrideApplication } from "./applications"
 
 export const SETTINGS = {
   enableDragRulerGridless: "enableDragRulerGridless",
   enableDragRulerGridded: "enableDragRulerGridded",
+  disableOutOfCombat: "disableOutOfCombat"
 } as const
 
 export const KEYBINDINGS = {
@@ -33,6 +34,16 @@ Hooks.once("init", () => {
       default: false,
       requiresReload: false
     });
+
+    game.settings.register(__MODULE_ID__, SETTINGS.disableOutOfCombat, {
+      name: "FABDRAGRULER.SETTINGS.DISABLEOUTOFCOMBAT.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.DISABLEOUTOFCOMBAT.HINT",
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false,
+      requiresReload: false
+    })
 
 
     game.settings.registerMenu(__MODULE_ID__, "userSegmentStyleMenu", {
@@ -111,14 +122,14 @@ Hooks.once("init", () => {
       restricted: false,
       precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
       onDown: () => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (CONFIG.Token.rulerClass instanceof FabulousTokenDragRuler || (CONFIG.Token.rulerClass as any).prototype === FabulousTokenDragRuler.prototype)
-          FabulousTokenDragRuler.toggleVisibility();
+        const rulerClass = CONFIG.Token.rulerClass as FabulousTokenDragRuler
+        if (rulerClass.toggleVisibility)
+          rulerClass.toggleVisibility();
       },
       onUp: () => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (CONFIG.Token.rulerClass instanceof FabulousTokenDragRuler || (CONFIG.Token.rulerClass as any).prototype === FabulousTokenDragRuler.prototype)
-          FabulousTokenDragRuler.toggleVisibility();
+        const rulerClass = CONFIG.Token.rulerClass as FabulousTokenDragRuler
+        if (rulerClass.toggleVisibility)
+          rulerClass.toggleVisibility();
       }
     })
   }

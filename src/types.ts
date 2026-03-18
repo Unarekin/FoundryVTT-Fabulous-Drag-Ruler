@@ -29,3 +29,7 @@ export interface OverrideConfig<style> {
   enabled: boolean;
   style?: style;
 }
+
+export interface FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.TokenRuler {
+  toggleVisibility(): void;
+}
