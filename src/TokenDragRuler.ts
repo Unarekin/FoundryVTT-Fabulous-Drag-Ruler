@@ -20,6 +20,8 @@ export class FabulousTokenDragRuler extends foundry.canvas.placeables.tokens.Tok
     if (sceneSetting === "enabled") return true;
     else if (sceneSetting === "disabled") return false;
 
+    if (game.settings?.get(__MODULE_ID__, SETTINGS.disableOutOfCombat) && !game.combat?.started) return false;
+
     const globalSetting = canvas?.scene?.grid.type === 0 ? (game.settings?.get(__MODULE_ID__, SETTINGS.enableDragRulerGridless) ?? false) : (game.settings?.get(__MODULE_ID__, SETTINGS.enableDragRulerGridded) ?? true)
     return globalSetting;
   }

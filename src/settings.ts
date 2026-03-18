@@ -5,6 +5,7 @@ import { GridHighlightStyleOverrideApplication, SegmentStyleOverrideApplication,
 export const SETTINGS = {
   enableDragRulerGridless: "enableDragRulerGridless",
   enableDragRulerGridded: "enableDragRulerGridded",
+  disableOutOfCombat: "disableOutOfCombat"
 } as const
 
 export const KEYBINDINGS = {
@@ -33,6 +34,16 @@ Hooks.once("init", () => {
       default: false,
       requiresReload: false
     });
+
+    game.settings.register(__MODULE_ID__, SETTINGS.disableOutOfCombat, {
+      name: "FABDRAGRULER.SETTINGS.DISABLEOUTOFCOMBAT.LABEL",
+      hint: "FABDRAGRULER.SETTINGS.DISABLEOUTOFCOMBAT.HINT",
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false,
+      requiresReload: false
+    })
 
 
     game.settings.registerMenu(__MODULE_ID__, "userSegmentStyleMenu", {
