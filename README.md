@@ -1,3 +1,11 @@
+# We Have Moved
+
+This repository has moved to a new site: https://git.gay/unarekin/FoundryVTT-Fabulous-Drag-Ruler
+
+Feature requests, bug reports, and other issues should be directed there.
+
+---
+
 [![GitHub License](https://img.shields.io/github/license/Unarekin/FoundryVTT-Fabulous-Drag-Ruler)](https://raw.githubusercontent.com/Unarekin/FoundryVTT-Fabulous-Drag-Ruler/refs/heads/master/LICENSE?token=GHSAT0AAAAAACYQQTQK6ODLNX6QMRS6G7GWZY22EZQ)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/Unarekin/FoundryVTT-Fabulous-Drag-Ruler)
 ![Supported Foundry Version](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FUnarekin%2FFoundryVTT-Fabulous-Drag-Ruler%2Frefs%2Fheads%2Fmain%2Fmodule.json)
